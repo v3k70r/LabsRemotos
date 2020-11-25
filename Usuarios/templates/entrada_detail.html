@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+        {% if entrada.fecha %}
+            <div class="date">
+                {{ entrada.fecha }}
+            </div>
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'entrada_edit' pk=entrada.pk %}"><i class="fas fa-edit"></i></a>
+        <h2>{{ entrada.titulo }}</h2>
+        <h4>{{ entrada.autor }}</h4>
+        <p>{{ entrada.contenido|linebreaksbr }}</p>
+    </div>
+                </div>
+    </div>
+{% endblock %}
